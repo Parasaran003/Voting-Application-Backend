@@ -1,11 +1,11 @@
-# Build Stage: Downloads Maven and compiles your Java code
-FROM maven:3.8.5-openjdk-17 AS build
+# Build Stage: Uses Java 25 Maven
+FROM maven:3.9-eclipse-temurin-25 AS build
 WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
-# Run Stage: Uses the modern Eclipse Temurin Java 17 image
-FROM eclipse-temurin:17-jre
+# Run Stage: Uses Java 25 JRE
+FROM eclipse-temurin:25-jre
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
