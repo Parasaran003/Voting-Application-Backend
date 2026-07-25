@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/api/polls")
-@CrossOrigin(origins = "https://your-frontend-name.vercel.app")
+@CrossOrigin(origins = "https://voting-application-angular-q7xdmfhtb.vercel.app/")
 public class PollController {
 
     @Autowired
