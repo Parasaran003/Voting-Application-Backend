@@ -4,8 +4,8 @@ WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
-# Run Stage: Runs the compiled application
-FROM openjdk:17-jdk-slim
+# Run Stage: Uses the modern Eclipse Temurin Java 17 image
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
