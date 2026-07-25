@@ -15,7 +15,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         // This is the URL Angular will use to establish the connection.
         // We explicitly allow localhost:4200 to prevent CORS blocking the socket.
         registry.addEndpoint("/ws")
-                .setAllowedOrigins("https://your-frontend-name.vercel.app");
+                .setAllowedOrigins("https://voting-application-angular-q7xdmfhtb.vercel.app/");
     }
 
     @Override
